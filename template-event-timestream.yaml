@@ -7,6 +7,7 @@ metadata:
   description: A component which subscribes to events and stores data in an AWS Timestream database
   tags:
     - typescript
+    - aws-lambda
 spec:
   owner: onboarding
   type: component
