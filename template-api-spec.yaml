@@ -3,23 +3,50 @@ kind: Template
 # some metadata about the template itself
 metadata:
   name: template-api-spec
-  title: API Spec
-  description: A new API spec
+  title: Timestream event subscriber
+  description: A component which subscribes to events and stores data in an AWS Timestream database
 spec:
-  owner: cc
-  type: service
+  owner: onboarding
+  type: component
 
   # these are the steps which are rendered in the frontend with the form input
   parameters:
     - title: Please provide some details
       required:
         - name
-        - repoUrl
       properties:
         name:
           title: Name
           type: string
-          description: Unique name of the api
+          description: Unique name of the component
           ui:autofocus: true
           ui:options:
             rows: 5
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
+              - github.com
+              
+    - title: Event details
+      required:
+        - eventbus
+        - eventname
+      properties:
+        eventbus:
+          title: Event bus
+          type: string
+          description: Whether to subscribe to the global event bus or the team's internal one
+          ui:autofocus: true
+          enum:
+            - Global
+            - Internal
+        eventname:
+          title: Event name
+          type: string
+          description: The name of the event to subscribe to
+  steps: []
