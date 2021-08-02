@@ -5,6 +5,7 @@ metadata:
   name: template-api-endpoint-function-go
   title: API Endpoint function (Go)
   description: A component can be that can be invoked from an AWS API Gateway
+  tags:
     - golang
     - aws-lambda
 spec:
