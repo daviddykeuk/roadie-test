@@ -1,0 +1,36 @@
+apiVersion: backstage.io/v1beta2
+kind: Template
+# some metadata about the template itself
+metadata:
+  name: template-api-spec
+  title: API Spec
+  description: A new API spec
+spec:
+  owner: cc
+  type: api
+
+  # these are the steps which are rendered in the frontend with the form input
+  parameters:
+    - title: Please provide some details
+      required:
+        - name
+      properties:
+        name:
+          title: Name
+          type: string
+          description: Unique name of the api
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          description: Where the API spec file will be pushed to
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+  steps: []
