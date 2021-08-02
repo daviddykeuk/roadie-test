@@ -7,7 +7,7 @@ metadata:
   description: A new API spec
 spec:
   owner: cc
-  type: api
+  type: service
 
   # these are the steps which are rendered in the frontend with the form input
   parameters:
