@@ -7,13 +7,14 @@ metadata:
   description: A new API spec
 spec:
   owner: cc
-  type: service
+  type: api
 
   # these are the steps which are rendered in the frontend with the form input
   parameters:
     - title: Please provide some details
       required:
         - name
+        - repoUrl
       properties:
         name:
           title: Name
@@ -22,9 +23,6 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
-      required:
-        - repoUrl
-      properties:
         repoUrl:
           title: Repository Location
           description: Where the API spec file will be pushed to
