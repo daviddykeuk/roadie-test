@@ -1,0 +1,49 @@
+apiVersion: backstage.io/v1beta2
+kind: Template
+# some metadata about the template itself
+metadata:
+  name: template-create-react-app
+  title: Create React App (Typescript)
+  description: An empty Create React Website
+  tags:
+    - react
+    - typescript
+  
+spec:
+  owner: onboarding
+  type: website
+
+  parameters:
+    - title: Please provide some details
+      required:
+        - name
+      properties:
+        name:
+          title: Name
+          type: string
+          description: Unique name of the repository
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the repository
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
+              - github.com
+        subdomain:
+          title: Subdomain
+          type: string
+          description: Subdomain for the URL of the website
+        privacy:
+          title: Internal or external
+          type: string
+          description: Whether the website can be accessed outside the VPN
+          enums:
+           - Internal
+           - External
+          
+  steps: []
