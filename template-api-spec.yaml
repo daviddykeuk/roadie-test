@@ -3,8 +3,8 @@ kind: Template
 # some metadata about the template itself
 metadata:
   name: template-api-spec
-  title: Timestream event subscriber
-  description: A component which subscribes to events and stores data in an AWS Timestream database
+  title: API Spec
+  description: An API specification that can be searched via the catalogue
 spec:
   owner: onboarding
   type: api
