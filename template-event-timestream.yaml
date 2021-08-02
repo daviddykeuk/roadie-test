@@ -2,9 +2,11 @@ apiVersion: backstage.io/v1beta2
 kind: Template
 # some metadata about the template itself
 metadata:
-  name: component-event-sub-timestream
-  title: Timestream event subscriber
+  name: component-event-sub-timestream-ts
+  title: Timestream event subscriber (Typescript)
   description: A component which subscribes to events and stores data in an AWS Timestream database
+  tags:
+    - typescript
 spec:
   owner: onboarding
   type: component
