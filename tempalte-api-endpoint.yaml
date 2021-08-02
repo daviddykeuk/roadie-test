@@ -1,0 +1,56 @@
+apiVersion: backstage.io/v1beta2
+kind: Template
+# some metadata about the template itself
+metadata:
+  name: template-api-endpoint-function-go
+  title: API Endpoint function (Go)
+  description: A component can be that can be invoked from an AWS API Gateway
+    - golang
+    - aws-lambda
+spec:
+  owner: onboarding
+  type: component
+
+  # these are the steps which are rendered in the frontend with the form input
+  parameters:
+    - title: Please provide some details
+      required:
+        - name
+      properties:
+        name:
+          title: Name
+          type: string
+          description: Unique name of the component
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
+              - github.com
+              
+    - title: API details
+      required:
+        - apigateway
+        - routeresource
+        - endpoint
+      properties:
+        apigateway:
+          title: API Gateway ARN
+          type: string
+          description: The SSM variable for the API Gateway ARN
+          ui:autofocus: true
+        routeresource:
+          title: Route resource ID
+          type: string
+          description: The SSM variable for the route resource ID
+        endpoint:
+          title: Endpoint
+          type: string
+          description: The endpoint on the API which will invoke this function
+  steps: []
