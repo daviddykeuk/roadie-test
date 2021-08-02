@@ -1,14 +1,13 @@
-# Notice the v1beta2 version
 apiVersion: backstage.io/v1beta2
 kind: Template
 # some metadata about the template itself
 metadata:
-  name: v1beta2-demo
+  name: component-event-sub-timestream
   title: Timestream event subscriber
   description: A component which subscribes to events and stores data in an AWS Timestream database
 spec:
   owner: onboarding
-  type: service
+  type: component
 
   # these are the steps which are rendered in the frontend with the form input
   parameters:
