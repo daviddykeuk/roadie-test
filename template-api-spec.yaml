@@ -23,12 +23,4 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
-        repoUrl:
-          title: Repository Location
-          description: Where the API spec file will be pushed to
-          type: string
-          ui:field: RepoUrlPicker
-          ui:options:
-            allowedHosts:
-              - github.com
   steps: []
