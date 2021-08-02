@@ -1,0 +1,41 @@
+apiVersion: backstage.io/v1beta2
+kind: Template
+# some metadata about the template itself
+metadata:
+  name: template-empty-repo
+  title: Empty repository
+  description: An empty repository, the world is your oyster
+  
+spec:
+  owner: onboarding
+  type: component
+
+  parameters:
+    - title: Please provide some details
+      required:
+        - name
+      properties:
+        name:
+          title: Name
+          type: string
+          description: Unique name of the repository
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the repository
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
+              - github.com
+        requiredreviews:
+          title: Required reviews
+          type: integer
+          description: The number of reviews required for PRs to be merged
+          minimum: 1
+          maximum: 5
+          
+  steps: []
