@@ -1,0 +1,53 @@
+apiVersion: backstage.io/v1beta2
+kind: Template
+metadata:
+  name: component-event-lambda-ts
+  title: Event triggered Lambda (Typescript)
+  description: A component which subscribes to events and invokes a function
+  tags:
+    - typescript
+    - aws-lambda
+spec:
+  owner: sinatra-onboarding
+  type: component
+  parameters:
+    - title: Please provide some details
+      required:
+        - name
+      properties:
+        name:
+          title: Name
+          type: string
+          description: Unique name of the component
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
+              - github.com
+        eventsoure:
+          title: Event Source
+          type: string
+          description: The source of the event to subscribe to (e.g. registration)
+        eventname:
+          title: Event Source
+          type: string
+          description: The name of the event to subscribe to (e.g. user:registration:submitted)
+        onprem:
+          title: Requires on-premises connectivity
+          type: boolean
+          description: If the lambda needs access to the on-premises network via a VPC
+  steps: []
